@@ -10,7 +10,7 @@
       "name": "signdocs-brasil",
       "source": "./",
       "description": "SignDocs Brasil e-signature tools for AI agents (hosted MCP endpoint).",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }

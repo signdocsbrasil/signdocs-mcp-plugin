@@ -22,15 +22,12 @@ Connects to the **hosted** SignDocs MCP endpoint (nothing to run locally).
 
 On enable you're prompted for:
 
-- **API credentials (Base64)** — base64 of `clientId:clientSecret` (from
-  app.signdocs.com.br → API). Generate it with:
-  ```bash
-  printf '%s' "YOUR_CLIENT_ID:YOUR_CLIENT_SECRET" | base64
-  ```
+- **Client ID** and **Client Secret** — from app.signdocs.com.br → API. No
+  encoding needed; they're sent as headers to the hosted endpoint.
 - **MCP endpoint URL** — defaults to homologação (`https://mcp-hml.signdocs.com.br/mcp`);
   set `https://mcp.signdocs.com.br/mcp` for production.
 
-Credentials are stored in your OS keychain. Then just ask Claude, e.g. *"create a
+The secret is stored in your OS keychain. Then just ask Claude, e.g. *"create a
 SignDocs signing session for …"*.
 
 ### Stdio fallback (run the server locally)

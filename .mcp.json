@@ -4,7 +4,8 @@
       "type": "http",
       "url": "${user_config.endpoint_url}",
       "headers": {
-        "Authorization": "Basic ${user_config.basic_auth}"
+        "X-SignDocs-Client-Id": "${user_config.client_id}",
+        "X-SignDocs-Client-Secret": "${user_config.client_secret}"
       }
     }
   }
