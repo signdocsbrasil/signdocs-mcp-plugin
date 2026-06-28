@@ -1,0 +1,29 @@
+{
+  "name": "signdocs-brasil",
+  "version": "0.1.0",
+  "description": "SignDocs Brasil e-signature tools for AI agents — create signing sessions, manage multi-signer envelopes, verify documents, and more, over the hosted SignDocs MCP endpoint.",
+  "author": {
+    "name": "SignDocs Brasil",
+    "email": "administrativo@signdocs.com.br"
+  },
+  "homepage": "https://signdocs.com.br",
+  "repository": "https://github.com/signdocsbrasil/signdocs-mcp-plugin",
+  "keywords": ["signdocs", "e-signature", "assinatura-eletronica", "icp-brasil", "mcp"],
+  "defaultEnabled": false,
+  "mcpServers": "./.mcp.json",
+  "userConfig": {
+    "endpoint_url": {
+      "type": "string",
+      "title": "MCP endpoint URL",
+      "description": "SignDocs MCP endpoint. Default is homologação (HML/sandbox). For production use https://mcp.signdocs.com.br/mcp",
+      "default": "https://mcp-hml.signdocs.com.br/mcp"
+    },
+    "basic_auth": {
+      "type": "string",
+      "title": "API credentials (Base64)",
+      "description": "Base64 of clientId:clientSecret from app.signdocs.com.br → API. Generate with: printf '%s' \"YOUR_CLIENT_ID:YOUR_CLIENT_SECRET\" | base64",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

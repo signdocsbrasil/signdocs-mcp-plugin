@@ -1,0 +1,5 @@
+node_modules/
+desktop-extension/node_modules/
+*.mcpb
+*.log
+.DS_Store

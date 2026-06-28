@@ -1,0 +1,52 @@
+{
+  "manifest_version": "0.3",
+  "name": "signdocs-brasil",
+  "display_name": "SignDocs Brasil",
+  "version": "0.1.0",
+  "description": "SignDocs Brasil e-signature tools for Claude — create signing sessions, manage multi-signer envelopes, verify documents, and more. Runs locally via stdio.",
+  "author": {
+    "name": "SignDocs Brasil",
+    "email": "administrativo@signdocs.com.br"
+  },
+  "homepage": "https://signdocs.com.br",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/signdocsbrasil/signdocs-mcp-plugin"
+  },
+  "license": "MIT",
+  "keywords": ["signdocs", "e-signature", "assinatura-eletronica", "icp-brasil", "mcp"],
+  "server": {
+    "type": "node",
+    "entry_point": "node_modules/@signdocs-brasil/mcp-server/dist/bin/stdio.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/node_modules/@signdocs-brasil/mcp-server/dist/bin/stdio.js"],
+      "env": {
+        "SIGNDOCS_CLIENT_ID": "${user_config.client_id}",
+        "SIGNDOCS_CLIENT_SECRET": "${user_config.client_secret}",
+        "SIGNDOCS_ENVIRONMENT": "${user_config.environment}"
+      }
+    }
+  },
+  "user_config": {
+    "client_id": {
+      "type": "string",
+      "title": "Client ID",
+      "description": "OAuth2 client ID from app.signdocs.com.br → API",
+      "required": true
+    },
+    "client_secret": {
+      "type": "string",
+      "title": "Client Secret",
+      "description": "OAuth2 client secret from app.signdocs.com.br → API",
+      "sensitive": true,
+      "required": true
+    },
+    "environment": {
+      "type": "string",
+      "title": "Environment",
+      "description": "hml (homologação/sandbox) or production",
+      "default": "hml"
+    }
+  }
+}

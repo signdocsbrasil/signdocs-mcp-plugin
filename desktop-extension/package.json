@@ -1,0 +1,9 @@
+{
+  "name": "signdocs-mcp-desktop-extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bundling shell for the SignDocs Brasil Claude Desktop extension (.mcpb). Bundles the @signdocs-brasil/mcp-server stdio server.",
+  "dependencies": {
+    "@signdocs-brasil/mcp-server": "^0.3.0"
+  }
+}
